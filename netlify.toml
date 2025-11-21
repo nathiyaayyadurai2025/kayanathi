@@ -1,18 +1,7 @@
-# netlify.toml for Next.js (App Router) + Tailwind project
-
 [build]
   command = "npm run build"
-  publish = ".next"          # Let Netlify plugin handle routing
+  publish = ".next"          # plugin handles routing
   functions = "netlify/functions"
 
-# Use the official Next.js Netlify plugin
 [[plugins]]
   package = "@netlify/plugin-nextjs"
-
-# Optional: Redirects for clean URLs (if needed)
-# This handles trailing slashes and SPA fallback
-[[redirects]]
-  from = "/*"
-  to = "/.netlify/functions/next"
-  status = 200
-  force = true
